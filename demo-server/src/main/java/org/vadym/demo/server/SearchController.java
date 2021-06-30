@@ -4,7 +4,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.Collections;
 import java.util.Set;
 
 /**
@@ -15,8 +14,14 @@ import java.util.Set;
 @RestController("/search")
 public class SearchController {
 
-    @GetMapping()
-    public Set<String> find(@RequestParam String query) {
-        return Collections.emptySet();
+    private SearchEngineCache cache;
+
+    public SearchController(SearchEngineCache cache) {
+        this.cache = cache;
+    }
+
+    @GetMapping
+    public Set<String> search(@RequestParam String query) {
+        return cache.find(query);
     }
 }

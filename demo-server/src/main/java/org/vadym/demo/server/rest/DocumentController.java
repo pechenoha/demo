@@ -17,9 +17,9 @@ import java.util.NoSuchElementException;
 @RestController("/document")
 public class DocumentController {
 
-    private SearchEngineStorage storage;
+    private final SearchEngineStorage storage;
 
-    private SearchEngineCache cache;
+    private final SearchEngineCache cache;
 
     public DocumentController(SearchEngineStorage storage, SearchEngineCache cache) {
         this.storage = storage;

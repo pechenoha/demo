@@ -15,9 +15,7 @@
     <packaging>jar</packaging>
 
     <name>demo-server</name>
-    <description>Demo Service contains an API to check user permissions and asset permissions taking
-        into consideration domains that user has access to and a workflow steps
-    </description>
+    <description>Demo Project. Simple Search Engine - Server</description>
 
     <properties>
         <spring.boot.version>2.5.2</spring.boot.version>

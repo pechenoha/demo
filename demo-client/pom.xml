@@ -15,12 +15,6 @@
     <packaging>jar</packaging>
 
     <name>demo-client</name>
-    <description>Demo Service contains an API to check user permissions and asset permissions taking
-        into consideration domains that user has access to and a workflow steps
-    </description>
-
-    <properties>
-        <java.version>11</java.version>
-    </properties>
+    <description>Demo Project. Simple Search Engine - Client</description>
 
 </project>

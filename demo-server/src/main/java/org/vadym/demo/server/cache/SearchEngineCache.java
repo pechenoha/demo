@@ -1,4 +1,4 @@
-package org.vadym.demo.server;
+package org.vadym.demo.server.cache;
 
 import java.util.Set;
 

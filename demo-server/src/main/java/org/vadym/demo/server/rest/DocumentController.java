@@ -1,9 +1,11 @@
-package org.vadym.demo.server;
+package org.vadym.demo.server.rest;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.vadym.demo.server.cache.SearchEngineCache;
+import org.vadym.demo.server.storage.SearchEngineStorage;
 
 import java.util.NoSuchElementException;
 

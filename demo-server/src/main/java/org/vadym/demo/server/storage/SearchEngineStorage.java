@@ -1,4 +1,4 @@
-package org.vadym.demo.server;
+package org.vadym.demo.server.storage;
 
 import java.util.Optional;
 

@@ -1,5 +1,7 @@
 package org.vadym.demo.server.cache;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 
 import java.util.HashMap;
@@ -15,6 +17,8 @@ import java.util.Set;
  */
 @Component
 public class SimpleCache implements SearchEngineCache {
+
+    private static final Logger logger = LoggerFactory.getLogger(SimpleCache.class);
 
     /**
      * The cache is in form of map. The following data is being stored here:
@@ -39,6 +43,7 @@ public class SimpleCache implements SearchEngineCache {
     public Set<String> find(String tokensString) {
         var result = new HashSet<String>();
         if (isBlankContents(tokensString)) {
+            logger.warn("Nothing to look for, because the tokens haven't been provided");
             return result;
         }
 
@@ -58,6 +63,7 @@ public class SimpleCache implements SearchEngineCache {
             }
         }
 
+        logger.info("Search results for the tokens '{}': {}", tokensString, result);
         return result;
     }
 

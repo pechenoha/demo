@@ -1,5 +1,7 @@
 package org.vadym.demo.server.rest;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
@@ -17,13 +19,17 @@ import org.vadym.demo.server.model.exception.NoSuchDocumentException;
 @ControllerAdvice
 public class RestExceptionHandler extends ResponseEntityExceptionHandler {
 
+    private static final Logger logger = LoggerFactory.getLogger(RestExceptionHandler.class);
+
     @ExceptionHandler(NoSuchDocumentException.class)
     protected ResponseEntity<ExceptionResponseEntity> handleException(NoSuchDocumentException e) {
+        logger.warn(e.getMessage());
         return new ResponseEntity<>(ExceptionResponseEntity.from(e), HttpStatus.NOT_FOUND);
     }
 
     @ExceptionHandler(CannotEditException.class)
     protected ResponseEntity<ExceptionResponseEntity> handleException(CannotEditException e) {
+        logger.warn(e.getMessage());
         return new ResponseEntity<>(ExceptionResponseEntity.from(e), HttpStatus.FORBIDDEN);
     }
 }

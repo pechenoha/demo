@@ -12,6 +12,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class SearchEngineApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(SearchEngineApplication.class, args);
+        SpringApplication.run(SearchEngineApplication.class);
     }
 }

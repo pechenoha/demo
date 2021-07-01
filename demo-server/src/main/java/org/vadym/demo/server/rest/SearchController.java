@@ -1,6 +1,7 @@
 package org.vadym.demo.server.rest;
 
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.vadym.demo.server.cache.SearchEngineCache;
@@ -12,10 +13,11 @@ import java.util.Set;
  *
  * @author Vadym Pechenoha
  */
-@RestController("/search")
+@RestController
+@RequestMapping("/search")
 public class SearchController {
 
-    private SearchEngineCache cache;
+    private final SearchEngineCache cache;
 
     public SearchController(SearchEngineCache cache) {
         this.cache = cache;

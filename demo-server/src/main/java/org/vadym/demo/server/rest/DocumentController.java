@@ -7,9 +7,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.vadym.demo.server.cache.SearchEngineCache;
+import org.vadym.demo.server.model.ContentsInput;
+import org.vadym.demo.server.model.exception.NoSuchDocumentException;
 import org.vadym.demo.server.storage.SearchEngineStorage;
-
-import java.util.NoSuchElementException;
 
 /**
  * Document controller allowing to operate on document entities.
@@ -39,19 +39,6 @@ public class DocumentController {
     @GetMapping("/{key}")
     public String get(@PathVariable String key) {
         return storage.get(key)
-                .orElseThrow(NoSuchElementException::new);
-    }
-
-    static class ContentsInput {
-
-        private String contents;
-
-        public String getContents() {
-            return contents;
-        }
-
-        public void setContents(String contents) {
-            this.contents = contents;
-        }
+                .orElseThrow(NoSuchDocumentException::new);
     }
 }

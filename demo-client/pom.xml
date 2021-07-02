@@ -17,4 +17,11 @@
     <name>demo-client</name>
     <description>Demo Project. Simple Search Engine - Client</description>
 
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-webflux</artifactId>
+        </dependency>
+    </dependencies>
+
 </project>

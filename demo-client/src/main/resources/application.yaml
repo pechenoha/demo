@@ -1,0 +1,5 @@
+server:
+  port: 10492
+
+simple-search-engine:
+  base-url: http://localhost:10491

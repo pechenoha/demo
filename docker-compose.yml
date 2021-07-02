@@ -1,0 +1,18 @@
+version: '3.7'
+services:
+
+  simple-search-engine-server:
+    image: simple-search-engine-server:latest
+    expose:
+      - "8080"
+    ports:
+      - "10491:8080"
+    depends_on:
+      - simple-search-engine-client
+
+  simple-search-engine-client:
+    image: simple-search-engine-client:latest
+    expose:
+      - "8080"
+    ports:
+      - "10492:8080"

@@ -1,0 +1,5 @@
+server:
+  port: 8080
+
+simple-search-engine:
+  base-url: http://simple-search-engine-server:8080

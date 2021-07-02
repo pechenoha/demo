@@ -1,0 +1,170 @@
+{
+	"info": {
+		"_postman_id": "b281986a-1bb5-4565-bf0e-01d07fd157d0",
+		"name": "Simple Search Engine",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Client",
+			"item": [
+				{
+					"name": "Generate Documents",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:10492/client/documents?from=0&size=20",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "10492",
+							"path": [
+								"client",
+								"documents"
+							],
+							"query": [
+								{
+									"key": "from",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "20"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Document",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:10492/client/document/document_9",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "10492",
+							"path": [
+								"client",
+								"document",
+								"document_9"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:10492/client/search?query=common_token token19_0",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "10492",
+							"path": [
+								"client",
+								"search"
+							],
+							"query": [
+								{
+									"key": "query",
+									"value": "common_token token19_0"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Server",
+			"item": [
+				{
+					"name": "Put Document",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"contents\": \"hello 123 world 456\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:10491/document/hello",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "10491",
+							"path": [
+								"document",
+								"hello"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Document",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:10491/document/hello",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "10491",
+							"path": [
+								"document",
+								"hello"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:10491/search?query=123 hello",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "10491",
+							"path": [
+								"search"
+							],
+							"query": [
+								{
+									"key": "query",
+									"value": "123 hello"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

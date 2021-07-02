@@ -82,5 +82,5 @@ curl --request GET 'http://localhost:10492/client/document/document_9'
 
 - Search
 ```bash
-curl --location --request GET 'http://localhost:10492/client/search?query=common_token%20token19_0'
+curl --request GET 'http://localhost:10492/client/search?query=common_token%20token19_0'
 ```

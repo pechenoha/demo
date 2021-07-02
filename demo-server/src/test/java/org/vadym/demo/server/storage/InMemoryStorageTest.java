@@ -24,7 +24,7 @@ public class InMemoryStorageTest {
         storage.put(documentKey, documentContents);
         var result = storage.get(documentKey);
         assertFalse(result.isEmpty(), "the result shouldn't be an empty Optional");
-        assertEquals(result.get(), documentContents);
+        assertEquals(documentContents, result.get());
     }
 
     @Test
@@ -36,7 +36,7 @@ public class InMemoryStorageTest {
             storage.put(documentKey, documentContents);
             var result = storage.get(documentKey);
             assertFalse(result.isEmpty(), "the result shouldn't be an empty Optional");
-            assertEquals(result.get(), documentContents);
+            assertEquals(documentContents, result.get());
         }
     }
 }

@@ -10,5 +10,4 @@ class SearchEngineApplicationTests {
     void contextLoads() {
         // do nothing, just make sure the App Context has been successfully loaded
     }
-
 }
